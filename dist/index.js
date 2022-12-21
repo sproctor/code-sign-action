@@ -352,7 +352,7 @@ async function signWithSigntool(fileName) {
             timestampUrl = 'http://timestamp.digicert.com';
         }
         const password = core.getInput('password');
-        const command = `"${signtool}" sign /f ${certificateFileName} /fd SHA256 /p ${password} /t ${timestampUrl} /td SHA256  ${fileName}`;
+        const command = `"${signtool}" sign /f ${certificateFileName} /fd SHA256 /p ${password} /tr ${timestampUrl} /td SHA256  ${fileName}`;
         console.log("Signing command: " + command);
         const { stdout } = await asyncExec(command);
         console.log(stdout);
