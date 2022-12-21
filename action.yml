@@ -15,13 +15,7 @@ inputs:
     required: false
   password:
     description: 'The password'
-    required: false
-  certificatesha1:
-    description: 'The sha1 or fingerprint of the certification'
-    required: false
-  certificatename:
-    description: 'The Name of the certificate'
-    required: false
+    required: true
   timestampUrl:
     description: 'URL of the timestamp server'
     required: false
