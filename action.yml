@@ -1,5 +1,6 @@
-name: 'Code sign a file with pfx certificate'
-description: 'Sign a file with a pfx certificate.'
+name: 'Windows Code Signing'
+description: 'Sign files with a PFX certificate.'
+author: 'Sean Proctor'
 branding:
   icon: 'award'
   color: 'green'
