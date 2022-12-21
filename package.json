@@ -1,6 +1,6 @@
 {
   "name": "code-sign-action",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Sign files with a code signing certificate.",
   "main": "dist/index.js",
   "scripts": {
