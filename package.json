@@ -2,7 +2,7 @@
   "name": "code-sign-action",
   "version": "1.0.0",
   "description": "Sign files with a code signing certificate.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "release": "ncc build index.ts && git add -f dist/"
@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/DanaBear/code-sign-action#readme",
   "dependencies": {
-    "@actions/core": "^1.2.0"
+    "@actions/core": "^1.10.0"
   },
   "devDependencies": {
     "@types/node": "^12.11.1",

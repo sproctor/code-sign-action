@@ -38,11 +38,8 @@ async function createCertificatePfx() {
 async function signWithSigntool(fileName: string) {
     try {
         // var command = `"${signtool}" sign /sm /t ${timestampUrl} /sha1 "1d7ec06212fdeae92f8d3010ea422ecff2619f5d"  /n "DanaWoo" ${fileName}`
-        var timestampUrl = core.getInput('timestampUrl');
-        if (timestampUrl === '') {
-          timestampUrl = 'http://timestamp.digicert.com'
-        }
-        const password = core.getInput('password')
+        const timestampUrl = core.getInput('timestampUrl');
+        const password = core.getInput('password');
         const command = `"${signtool}" sign /f ${certificateFileName} /fd SHA256 /p ${password} /tr ${timestampUrl} /td SHA256  ${fileName}`
         console.log("Signing command: " + command); 
         const { stdout } = await asyncExec(command);
@@ -86,7 +83,7 @@ async function* getFiles(folder: string, recursive: boolean): any {
 
 async function signFiles() {
     const folder = core.getInput('folder', { required: true });
-    const recursive = core.getInput('recursive') == 'true';
+    const recursive = core.getBooleanInput('recursive');
     for await (const file of getFiles(folder, recursive)) {
         await trySignFile(file);
     }

@@ -13,12 +13,14 @@ inputs:
     required: true
   recursive:
     description: 'Recursively search for supported files.'
+    default: false
     required: false
   password:
     description: 'The password'
     required: true
   timestampUrl:
     description: 'URL of the timestamp server'
+    default: 'http://timestamp.digicert.com'
     required: false
 
 runs:
