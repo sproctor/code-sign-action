@@ -45,7 +45,7 @@ async function signWithSigntool(fileName: string) {
         const { stdout } = await asyncExec(command);
         console.log(stdout);
         return true;
-    } catch(err) {
+    } catch(err: any) {
         console.log(err.stdout);
         console.log(err.stderr);
         return false;
